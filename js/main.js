@@ -1,6 +1,38 @@
+// When the document loads
 $(document).ready(function(){
 
-    console.log("Hello");
+  console.log("Hello");
 
-    $("#hero-image").animate({top: '-=100px'});
-  }); 
+  // -----------------------------------------
+  // Home Page
+
+  // When the document loads, animate the hero image upwards
+  $(".hero-image").animate({top: '-=100px'});
+
+  // -----------------------------------------
+  // Browse Page
+
+  // Hide all description text from the plant cards
+  $("#descriptionText").hide();
+
+}); 
+
+// When the card is clicked
+$(".card").click(function(){
+
+  // Toggle the price & description text
+  $("#priceText").toggle();
+  $("#descriptionText").toggle();
+
+  // Resize the image to fit the additional content
+  $(".card-img-top").toggleClass("small");
+
+});
+
+
+$(document).ready(function () {
+  $('.remove-btn').on('click', function () {
+    // Get the closest 'tr' element (the row) and remove it
+    $(this).closest('tr').remove();
+  });
+});
